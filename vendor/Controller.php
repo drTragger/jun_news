@@ -4,7 +4,7 @@
 class Controller
 {
     private $view;
-    private $news;
+    public $news;
 
     public function __construct()
     {
