@@ -10,6 +10,6 @@ class Router
 
     static public function init ()
     {
-        include_once 'views' . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR . 'default.php';
+        $controller = new Controller();
     }
 }
