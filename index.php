@@ -1,6 +1,10 @@
 <?php
-include_once 'vendor' . DIRECTORY_SEPARATOR . 'Router.php';
-include_once 'vendor' . DIRECTORY_SEPARATOR . 'View.php';
-include_once 'vendor' . DIRECTORY_SEPARATOR . 'Controller.php';
-include_once 'vendor' . DIRECTORY_SEPARATOR . 'News.php';
+spl_autoload_register(function ($className) {
+    $classFilePath = 'vendor' . DIRECTORY_SEPARATOR . $className . '.php';
+    if (file_exists($classFilePath)) {
+        require_once $classFilePath;
+        return true;
+    }
+    return false;
+});
 Router::init();
