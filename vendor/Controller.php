@@ -10,14 +10,11 @@ class Controller
     {
         $this->view = new View();
         switch ($_GET['page']) {
-            case 'all':
+            default:
                 $this->all();
                 break;
             case 'item':
                 $this->item();
-                break;
-            default:
-                $this->add();
                 break;
         }
         $this->view->render($this->news);
@@ -36,5 +33,9 @@ class Controller
     public function add()
     {
         unset($_GET['page']);
+        return [
+            'title' => filter_input(INPUT_POST, 'title'),
+            'content' => filter_input(INPUT_POST, 'content'),
+        ];
     }
 }
