@@ -10,6 +10,45 @@ header {
     font-size: 1.5rem;
     padding: 0.8rem;
 }
+.myCenter{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+table {
+    width: 70%;
+    margin: 1% auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+table  tr {
+    display: flex;
+    flex-direction: column;
+    border: rgba(13,0,18,0.44) 1px solid;
+    justify-content: center;
+    align-content: center;
+    padding: 10px;
+    width: 100%;
+    margin: 1px;
+}
+
+.showNews tr:nth-child(odd) {
+    margin-top: 20px;
+    background-color: #dcdcdc;
+}
+
+.addNews>form{
+    width: 40%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    min-height: 80px;
+
+}
 
 footer {
     text-align: center;
