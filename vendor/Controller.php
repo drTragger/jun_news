@@ -18,7 +18,7 @@ class Controller
                 break;
         }
         $this->news = $news;
-        $this->view->render($this->news);
+        $this->view->render($this->news); // Renders the page
     }
 
     public function all()
