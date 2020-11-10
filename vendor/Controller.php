@@ -29,6 +29,9 @@ class Controller
     public function item()
     {
         $this->view->page = 'item';
+        $id = filter_input(INPUT_GET, 'newsId');
+        $news = new News();
+        $this->view->render($news->getNewsItem($id));
     }
 
     public function add()
