@@ -18,12 +18,12 @@ class Controller
                 break;
         }
         $this->news = $news;
-        $this->view->render($this->news);
     }
 
     public function all()
     {
         $this->view->page = 'all';
+        $this->view->render($this->news);
     }
 
     public function item()
