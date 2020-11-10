@@ -3,7 +3,7 @@
     <input type="submit" value="All News">
 </form>
 <table>
-    <?php foreach ($newsItemShow as $newsItem): ?>
+    <?php foreach ($data as $newsItem): ?>
     <tr>
         <td>
             <h2><?= $newsItem['title'] ?></h2>
