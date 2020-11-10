@@ -10,13 +10,13 @@ class Controller
     {
         $this->view = new View();
         switch ($_GET['page']) {
-            default:
+            case 'all':
                 $this->all();
                 break;
             case 'item':
                 $this->item();
                 break;
-            case 'add':
+            default:
                 $this->add();
                 break;
         }
