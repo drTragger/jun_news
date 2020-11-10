@@ -11,14 +11,10 @@ class Router
 
     static public function init()
     {
-        $controller = new Controller();
         $news = new News();
-        if (isset($_POST['title'])) {
+        $controller = new Controller($news->getAllNews());
+        if (isset($_POST['title']) && isset($_POST['content'])) {
             $news->addNewsItem($controller->add());
-        } else {
-            if (!empty($news->getAllNews())) {
-                $controller->news = $news->getAllNews();
-            }
         }
     }
 }

@@ -4,9 +4,9 @@
 class Controller
 {
     private $view;
-    public $news;
+    private $news;
 
-    public function __construct()
+    public function __construct($news)
     {
         $this->view = new View();
         switch ($_GET['page']) {
@@ -17,6 +17,7 @@ class Controller
                 $this->item();
                 break;
         }
+        $this->news = $news;
         $this->view->render($this->news);
     }
 
