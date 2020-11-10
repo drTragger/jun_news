@@ -3,15 +3,17 @@
     <input type="submit" value="All News">
 </form>
 <table>
+    <?php foreach ($newsItemShow as $newsItem): ?>
     <tr>
         <td>
-            <h2><?= $_GET['title'] ?></h2>
+            <h2><?= $newsItem['title'] ?></h2>
         </td>
     </tr>
     <tr>
         <td>
-            <?= $_GET['content'] ?>
+            <?= $newsItem['content'] ?>
         </td>
     </tr>
+    <?php endforeach; ?>
 </table>
 
