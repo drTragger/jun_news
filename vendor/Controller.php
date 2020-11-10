@@ -18,20 +18,17 @@ class Controller
                 break;
         }
         $this->news = $news;
+        $this->view->render($this->news); // Renders the page
     }
 
     public function all()
     {
         $this->view->page = 'all';
-        $this->view->render($this->news);
     }
 
     public function item()
     {
         $this->view->page = 'item';
-        $id = filter_input(INPUT_GET, 'newsId');
-        $news = new News();
-        $this->view->render($news->getNewsItem($id));
     }
 
     public function add()
