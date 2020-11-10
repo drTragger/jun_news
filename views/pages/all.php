@@ -5,18 +5,16 @@
     </div>
     <input type="submit" value="Send">
 </form>
-
 <table>
-    <?php if(is_array($this->news)) :  ?>
-        <?php foreach ($this->news as $id=> $newsItem): ?>  <!--TODO MAKE IT CORRECT   -->
+        <?php foreach ($data as $id=> $newsItem): ?>
             <tr>
                 <td>
-                    <h2><?= mb_strimwidth($newsItem['title'] , 0, 50, " ...") ?></h2>
+                    <h2><?= $newsItem['title']?></h2>
                 </td>
             </tr>
         <tr>
             <td>
-                <p><?= $newsItem['content'] ?></p>
+                <p><?= mb_strimwidth($newsItem['content'], 0, 100, " ...") ?></p>
                 <form method="get">
                     <input type="hidden" name="page" value="item"/>
                     <input type="hidden" name="newsId" value="<?= $newsItem['id'] ?>">
@@ -25,5 +23,4 @@
             </td>
         </tr>
         <?php endforeach; ?>
-    <?php endif; ?>
 </table>
