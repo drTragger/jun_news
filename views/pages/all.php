@@ -20,8 +20,6 @@
                 <form method="get">
                     <input type="hidden" name="page" value="item"/>
                     <input type="hidden" name="newsId" value="<?= $newsItem['id'] ?>">
-                    <input type="hidden" name="title" value="<?= $newsItem['title'] ?>"/>
-                    <input type="hidden" name="content" value="<?= $newsItem['content']?>"/>
                     <input type="submit" class="btn btn-default" value="Read more">
                 </form>
             </td>
