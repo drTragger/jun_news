@@ -1,8 +1,8 @@
-<form method="get">
+<form class="myCenter" method="get">
     <input type="hidden" name="page" value="all"/>
     <input type="submit" value="All News">
 </form>
-<table>
+<table class="showNews">
     <?php foreach ($data as $newsItem): ?>
     <tr>
         <td>
