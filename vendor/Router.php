@@ -14,7 +14,7 @@ class Router
         $controller = new Controller();
         $news = new News();
         if (isset($_POST['title'])) {
-            $news->addNewsItem(); // Please remove the 'oneItem' attribute from the method
+            $news->addNewsItem($controller->news); // Please remove the 'oneItem' attribute from the method
         } else {
             if (!empty($news->getAllNews())) {
                 $controller->news = $news->getAllNews();
