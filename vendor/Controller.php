@@ -18,7 +18,7 @@ class Controller
                 break;
         }
         $this->news = $news;
-        $this->view->render($this->news); // Renders the page
+        $this->view->render($this->news);
     }
 
     public function all()
@@ -29,6 +29,9 @@ class Controller
     public function item()
     {
         $this->view->page = 'item';
+        $news = new News();
+        $id = filter_input(INPUT_GET, 'newsId');
+        $this->view->render($news->getNewsItem($id));
     }
 
     public function add()
