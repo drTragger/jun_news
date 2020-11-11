@@ -1,5 +1,4 @@
 <form class="myCenter" method="get">
-    <input type="hidden" name="page" value="all"/>
     <input type="submit" value="All News">
 </form>
 <table class="showNews">

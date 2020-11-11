@@ -16,7 +16,6 @@
                 <td>
                     <p><?= mb_strimwidth($newsItem['content'], 0, 100, " ...") ?></p>
                     <form class="myCenter" method="get">
-                        <input type="hidden" name="page" value="item"/>
                         <input type="hidden" name="newsId" value="<?= $newsItem['id'] ?>">
                         <input type="submit" class="btn btn-default" value="Read more">
                     </form>
