@@ -3,42 +3,41 @@
 
 class Controller
 {
+    /**
+     * @var View
+     */
     private $view;
+    /**
+     * @var News
+     */
     private $news;
 
-    public function __construct($news)
+    public function __construct()
     {
         $this->view = new View();
-        switch ($_GET['page']) {
-            default:
-                $this->all();
-                break;
-            case 'item':
-                $this->item();
-                break;
-        }
-        $this->news = $news;
-        $this->view->render($this->news);
+        $this->news = new News();
     }
 
     public function all()
     {
         $this->view->page = 'all';
+        $this->view->render($this->news->getAllNews());
     }
 
     public function item()
     {
         $this->view->page = 'item';
-        $news = new News();
         $id = filter_input(INPUT_GET, 'newsId');
-        $this->view->render($news->getNewsItem($id));
+        $this->view->render($this->news->getNewsItem($id));
     }
 
     public function add()
     {
-        return [
+        $newNewsItem = [
             'title' => filter_input(INPUT_POST, 'title'),
             'content' => filter_input(INPUT_POST, 'content'),
         ];
+        $this->news->addNewsItem($newNewsItem);
+        Router::redirect();
     }
 }
