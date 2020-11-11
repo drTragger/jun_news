@@ -3,7 +3,7 @@
 
 class News
 {
-    private $news = [];
+    private $news;
     private $db;
 
     public function __construct()
