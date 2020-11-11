@@ -4,17 +4,20 @@
 class Router
 {
     // Use this to get rid of the POST data
-    static public function redirect($url)
+    static public function redirect()
     {
-        header("Location: " . $url);
+        header("Location: " .$_SERVER['PHP_SELF']);
     }
 
     static public function init()
     {
-        $news = new News();
-        $controller = new Controller($news->getAllNews());
-        if (isset($_POST['title']) && isset($_POST['content'])) {
-            $news->addNewsItem($controller->add());
+        $controller = new Controller();
+        $action = 'all';
+        if(isset($_GET['newsId'])){
+            $action = 'item';
+        }else if($_POST['title']){
+            $action = 'add';
         }
+        $controller->$action();
     }
 }
